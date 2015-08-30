@@ -19,7 +19,6 @@ class KnightPathFinder
   def build_move_tree
     queue = [@visited_positions.first]
     until queue.empty?
-      # p queue.map { |node| node.value }
       current = queue.shift
       new_move_positions(current)
       queue.concat(current.children)
@@ -56,12 +55,7 @@ class KnightPathFinder
     visited_positions.concat(valid_moves)
     valid_moves
   end
-
-
-
-
 end
-
 
 KnightPathFinder.new([0,0]).find_path([7,6])
 KnightPathFinder.new([0,0]).find_path([6,2])
